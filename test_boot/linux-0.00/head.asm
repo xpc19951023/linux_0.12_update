@@ -26,8 +26,18 @@ setup_int:
         out     0x21,al
         out     0xA1,al
 	cli
-enable_rtc:
-	mov al,
+	
+enable_rtc_interrupt_source:
+	mov al ,0x0a					   ;select A register of RTC
+	out 0x70,al
+	in al,0x71                         ;get value of A register
+	xor al,0x0f                         ;500ms interrupt
+	out 0x71,al                         ;out config into A register
+	mov al,0x0b
+	out 0x70,al
+	in  al,0x71
+	xor al,0x40
+	out 0x71,al                          ;enable term interrupt
 startup_32:
 	mov ax,0x10
 	mov ds,ax

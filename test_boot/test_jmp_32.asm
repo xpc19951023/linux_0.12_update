@@ -1,0 +1,4 @@
+SECTION .s32
+mov ax,0x10
+mov cs,ax
+jmp 0x10:0x7c00

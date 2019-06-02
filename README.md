@@ -3,7 +3,8 @@ Now,I wand to read linux_0.12 and change it to make it can be used on my compute
 It is a long time to do this,because l am a new hand.
 Hope everting is ok.
 
-
+if you want to contact me：
+  email：987543907@qq.com     xupengcheng@citos.cn
 
 # 2019/6/2  13：15
 成功将网上linux0.00的代码用NASM汇编格式重写

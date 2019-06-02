@@ -1,4 +1,4 @@
-;  head.s contains the 32-bit startup code.
+;  head.s contain: the 32-bit startup code.
 ;  Two L3 task multitasking. The code of tasks are in kernel area, 
 ;  just like the Linux. The kernel code is located at 0x10000. 
 SCRN_SEL	equ 0x18
@@ -22,8 +22,9 @@ setup_int:
         mov     al,0x01                ; 8086 mode for both
         out     0x21,al
         out     0xA1,al
-        mov     al,0x00                ; enable interrupts for now
+        mov     al,0xfb                ; enable interrupts for now
         out     0x21,al
+        mov     al,0xfe
         out     0xA1,al
 	cli
 	
@@ -31,12 +32,12 @@ enable_rtc_interrupt_source:
 	mov al ,0x0a					   ;select A register of RTC
 	out 0x70,al
 	in al,0x71                         ;get value of A register
-	xor al,0x0f                         ;500ms interrupt
+	xor al,0x0f                       ;500ms interrupt
 	out 0x71,al                         ;out config into A register
 	mov al,0x0b
 	out 0x70,al
 	in  al,0x71
-	xor al,0x40
+	mov al,0x40
 	out 0x71,al                          ;enable term interrupt
 startup_32:
 	mov ax,0x10
@@ -45,21 +46,21 @@ startup_32:
 ; setup base fields of descriptors.
 	call setup_idt
 	call setup_gdt
-    mov  ax,0x10
+        mov  ax,0x10
 	mov  ds,ax
 	mov  es,ax
 	mov  fs,ax
 	mov  gs,ax
 	lss esp,[init_stack]
 ; setup up timer 8253 chip.
-    mov  al,0x36
-	mov  edx,0x43
-	out  dx,al
-	mov  eax,11930 ;timer clock is 1.193280Mhz,1193280 times/s  1193280/100=11932
-	mov  edx,0x40
-	out  dx,al
-	mov  al,ah
-	out  dx,al
+;       mov  al,0x36
+;	mov  edx,0x43
+;	out  dx,al
+;	mov  eax,11930 ;timer clock is 1.193280Mhz,1193280 times/s  1193280/100=11932
+;	mov  edx,0x40
+;	out  dx,al
+;	mov  al,ah
+;	out  dx,al
 ; setup timer & system call interrupt descriptors.
 	mov eax,0x00080000
 	mov  ax,timer_interrupt
@@ -96,7 +97,7 @@ startup_32:
 	push dword 0x0f
 	push dword task0
 	iret
-
+        jmp $
 ;****************************************;
 setup_gdt:
 	lgdt [lgdt_opcode]
@@ -161,7 +162,13 @@ timer_interrupt:
 	mov eax, 0x10
 	mov ds, ax
 	mov al, 0x20
+	out 0xa0,al
 	out 0x20,al
+        mov al,0x0c
+        out 0x70,al
+;        mov al,0
+	in al,0x71
+;	xor ax,ax
 	mov  eax,1
 	cmp   [current],eax
 	je t1
@@ -210,7 +217,7 @@ align 8
 idt:		; idt is uninitialized
 	times 256  dq 0
 gdt:	
-    dq 0x0000000000000000	;* NULL descriptor *;
+        dq 0x0000000000000000	;* NULL descriptor *;
 	dq 0x00c09a00000007ff	;* 8Mb 0x08, base equ 0x00000 *;
 	dq 0x00c09200000007ff	;* 8Mb 0x10 *;
 	dq 0x00c0920b80000002	;* screen 0x18 - for display *;

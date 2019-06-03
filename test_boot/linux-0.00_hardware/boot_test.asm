@@ -2,7 +2,7 @@
 ;
 ; It then loads the system at 0x10000, using BIOS interrupts. Thereafter
 ; it disables all interrupts, changes to protected mode, and calls the 
-
+bits 16
 org 0x7c00
 BOOTSEG equ 0x07c0
 SYSSEG  equ 0x1000			; system loaded at 0x10000 (65536).
@@ -41,7 +41,6 @@ go:	mov	ax,cs
 load_system:
 int 13h
 	mov	dx,0x2080
-;	mov	dx,0x2000
 	mov	cx,0x0022
 	mov	ax,SYSSEG
 	mov	es,ax

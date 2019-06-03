@@ -7,38 +7,6 @@ LDT0_SEL	equ 0x28
 TSS1_SEL	equ 0X30
 LDT1_SEL	equ 0x38
 bits  32
-setup_int:
-        mov     al,0x11                ; initialization sequence
-        out     0x20,al                ; send it to 8259A-1
-        out     0xA0,al                ; and to 8259A-2
-        mov     al,0x20                ; start of hardware int's (0x20)
-        out     0x21,al
-        mov     al,0x28                ; start of hardware int's 2 (0x28)
-        out     0xA1,al
-        mov     al,0x04                ; 8259-1 is master
-        out     0x21,al
-        mov     al,0x02                ; 8259-2 is slave
-        out     0xA1,al
-        mov     al,0x01                ; 8086 mode for both
-        out     0x21,al
-        out     0xA1,al
-        mov     al,0xfb                ; enable interrupts for now
-        out     0x21,al
-        mov     al,0xfe
-        out     0xA1,al
-	cli
-	
-enable_rtc_interrupt_source:
-	mov al ,0x0a					   ;select A register of RTC
-	out 0x70,al
-	in al,0x71                         ;get value of A register
-	xor al,0x0f                       ;500ms interrupt
-	out 0x71,al                         ;out config into A register
-	mov al,0x0b
-	out 0x70,al
-	in  al,0x71
-	mov al,0x40
-	out 0x71,al                          ;enable term interrupt
 startup_32:
 	mov ax,0x10
 	mov ds,ax
@@ -63,12 +31,12 @@ startup_32:
 ;	out  dx,al
 ; setup timer & system call interrupt descriptors.
 	mov eax,0x00080000
-	mov  ax,timer_interrupt
-	mov  dx,0x8E00
-	mov  ecx,0x28
-	lea esi,[idt+ecx*8]
-	mov [esi],eax
-	mov [esi+4],edx
+;	mov  ax,timer_interrupt
+;	mov  dx,0x8E00
+;	mov  ecx,0x28
+;	lea esi,[idt+ecx*8]
+;	mov [esi],eax
+;	mov [esi+4],edx
 	mov  ax,system_interrupt
 	mov dx,0xef00
 	mov ecx,0x80
@@ -97,7 +65,7 @@ startup_32:
 	push dword 0x0f
 	push dword task0
 	iret
-        jmp $
+;        jmp $
 ;****************************************;
 setup_gdt:
 	lgdt [lgdt_opcode]

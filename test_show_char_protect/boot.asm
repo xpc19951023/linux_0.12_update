@@ -1,0 +1,60 @@
+[BITS 16]
+jmp start
+start:
+cli
+mov ah,0
+mov al,0x03
+int 10h
+mov al,1       ;one sector
+mov ah,2       ;read sectors
+mov bx,0x1000  ;
+mov es,bx      ;buffer es:bx=1000:0
+mov bx,0       
+mov cx,0x0022  ;cl=22h 34 sector    ch=0 cyl	
+mov dx,0x2080   ;dh=20h head    dl=0 floopy 80 disk
+int 0x13
+jnc ok_load
+die:
+jmp die
+ok_load:
+mov ax,0x1000
+mov ds,ax
+mov si,0
+mov di,0
+mov es,di
+mov cx,512
+cpy:
+movsb
+dec cx
+jcxz cpy_done
+jmp cpy
+cpy_done: 
+mov dx,0
+mov ds,dx
+lgdt [0x7c00+gdt_48]
+mov edx,cr0
+or edx,1
+mov cr0,edx
+set8025mode:
+mov ax,0x0010
+mov ds,ax
+jmp dword 0x0008:0
+gdt_48:
+DW 24
+DW gdt+0x7c00,0
+gdt:
+DW 0,0,0,0    ;null
+
+DW 0Xffff
+DW 0X0000
+DW 0X9e00
+DW 0X005f
+
+DW 0Xffff
+DW 0X0000
+DW 0X9200
+DW 0X005f
+
+TIMES 510-($-$$) DB 0
+
+DW 0XAA55

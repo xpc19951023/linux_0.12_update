@@ -15,3 +15,7 @@ log: bochsout.txt
 mouse: enabled=0 
 #enable key mapping, using US layout as default 
 keyboard:keymap=/usr/share/bochs/keymaps/x11-pc-de.map
+#setup cpu paras  
+cpu: model=corei5_lynnfield_750, count=4, ips=10000000
+
+cpuid: level=6, mmx=1, sep=1, apic=xapic, aes=1, movbe=1, xsave=1

@@ -22,23 +22,23 @@ setup_int:
         mov     al,0x01                ; 8086 mode for both
         out     0x21,al
         out     0xA1,al
-        mov     al,0xfb                ; enable interrupts for now
+        mov     al,0xfe                ; enable interrupts for now
         out     0x21,al
-        mov     al,0xfe
+        mov     al,0xff
         out     0xA1,al
 	cli
 	
-enable_rtc_interrupt_source:
-	mov al ,0x0a					   ;select A register of RTC
-	out 0x70,al
-	in al,0x71                         ;get value of A register
-	xor al,0x0f                       ;500ms interrupt
-	out 0x71,al                         ;out config into A register
-	mov al,0x0b
-	out 0x70,al
-	in  al,0x71
-	mov al,0x40
-	out 0x71,al                          ;enable term interrupt
+;enable_rtc_interrupt_source:
+;	mov al ,0x0a					   ;select A register of RTC
+;	out 0x70,al
+;	in al,0x71                         ;get value of A register
+;	xor al,0x0f                       ;500ms interrupt
+;	out 0x71,al                         ;out config into A register
+;	mov al,0x0b
+;	out 0x70,al
+;	in  al,0x71
+;	mov al,0x40
+;	out 0x71,al                          ;enable term interrupt
 startup_32:
 	mov ax,0x10
 	mov ds,ax
@@ -53,19 +53,19 @@ startup_32:
 	mov  gs,ax
 	lss esp,[init_stack]
 ; setup up timer 8253 chip.
-;       mov  al,0x36
-;	mov  edx,0x43
-;	out  dx,al
-;	mov  eax,11930 ;timer clock is 1.193280Mhz,1193280 times/s  1193280/100=11932
-;	mov  edx,0x40
-;	out  dx,al
-;	mov  al,ah
-;	out  dx,al
+       mov  al,0x36
+	mov  edx,0x43
+	out  dx,al
+	mov  eax,11930 ;timer clock is 1.193280Mhz,1193280 times/s  1193280/100=11932
+	mov  edx,0x40
+	out  dx,al
+	mov  al,ah
+	out  dx,al
 ; setup timer & system call interrupt descriptors.
 	mov eax,0x00080000
 	mov  ax,timer_interrupt
 	mov  dx,0x8E00
-	mov  ecx,0x28
+	mov  ecx,0x20
 	lea esi,[idt+ecx*8]
 	mov [esi],eax
 	mov [esi+4],edx
@@ -277,7 +277,7 @@ task0:
 	mov ds,ax
 	mov al,65
 	int 0x80
-	mov ecx,0xfff
+	mov ecx,0xffff
 ta1:	loop ta1
 	jmp task0 
 
@@ -286,7 +286,7 @@ task1:
 	mov ds,ax
 	mov al,66
 	int 0x80
-	mov ecx, 0xfff
+	mov ecx, 0xffff
 ta11:	loop ta11
 	jmp task1
 

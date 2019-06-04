@@ -18,41 +18,41 @@
 00000000000i[      ]   Sound support: no
 00000000000i[      ]   USB support: UHCI
 00000000000i[      ]   VGA extension support: vbe voodoo
-00000000000i[MEM0  ] allocated memory at 0x7f68e8e56010. after alignment, vector=0x7f68e8e57000
+00000000000i[MEM0  ] allocated memory at 0x7f5242bed010. after alignment, vector=0x7f5242bee000
 00000000000i[MEM0  ] 16.00MB
 00000000000i[MEM0  ] mem block size = 0x00020000, blocks=128
 00000000000i[MEM0  ] rom at 0xfffe0000/131072 ('/usr/share/bochs/BIOS-bochs-latest')
-00000000000i[      ] lt_dlhandle is 0x55d7fbb0ecc0
+00000000000i[      ] lt_dlhandle is 0x558f900fccc0
 00000000000i[PLUGIN] loaded plugin libbx_hdimage.so
-00000000000i[      ] lt_dlhandle is 0x55d7fbb0f540
+00000000000i[      ] lt_dlhandle is 0x558f900fd540
 00000000000i[PLUGIN] loaded plugin libbx_pci.so
-00000000000i[      ] lt_dlhandle is 0x55d7fbb10010
+00000000000i[      ] lt_dlhandle is 0x558f900fe010
 00000000000i[PLUGIN] loaded plugin libbx_pci2isa.so
-00000000000i[      ] lt_dlhandle is 0x55d7fbb10b40
+00000000000i[      ] lt_dlhandle is 0x558f900feb40
 00000000000i[PLUGIN] loaded plugin libbx_usb_uhci.so
-00000000000i[      ] lt_dlhandle is 0x55d7fbb13350
+00000000000i[      ] lt_dlhandle is 0x558f90101350
 00000000000i[PLUGIN] loaded plugin libbx_acpi.so
-00000000000i[      ] lt_dlhandle is 0x55d7fbb13e80
+00000000000i[      ] lt_dlhandle is 0x558f90101e80
 00000000000i[PLUGIN] loaded plugin libbx_hpet.so
-00000000000i[      ] lt_dlhandle is 0x55d7fbb14d20
+00000000000i[      ] lt_dlhandle is 0x558f90102d20
 00000000000i[PLUGIN] loaded plugin libbx_cmos.so
-00000000000i[      ] lt_dlhandle is 0x55d7fbb156b0
+00000000000i[      ] lt_dlhandle is 0x558f901036b0
 00000000000i[PLUGIN] loaded plugin libbx_dma.so
-00000000000i[      ] lt_dlhandle is 0x55d7fbb16130
+00000000000i[      ] lt_dlhandle is 0x558f90104130
 00000000000i[PLUGIN] loaded plugin libbx_pic.so
-00000000000i[      ] lt_dlhandle is 0x55d7fbb16920
+00000000000i[      ] lt_dlhandle is 0x558f90104920
 00000000000i[PLUGIN] loaded plugin libbx_pit.so
-00000000000i[      ] lt_dlhandle is 0x55d7fbb17350
+00000000000i[      ] lt_dlhandle is 0x558f90105350
 00000000000i[PLUGIN] loaded plugin libbx_vga.so
-00000000000i[      ] lt_dlhandle is 0x55d7fbb17be0
+00000000000i[      ] lt_dlhandle is 0x558f90105be0
 00000000000i[PLUGIN] loaded plugin libbx_floppy.so
-00000000000i[      ] lt_dlhandle is 0x55d7fbb18750
+00000000000i[      ] lt_dlhandle is 0x558f90106750
 00000000000i[PLUGIN] loaded plugin libbx_ioapic.so
-00000000000i[      ] lt_dlhandle is 0x55d7fbb190a0
+00000000000i[      ] lt_dlhandle is 0x558f901070a0
 00000000000i[PLUGIN] loaded plugin libbx_keyboard.so
-00000000000i[      ] lt_dlhandle is 0x55d7fbb19a20
+00000000000i[      ] lt_dlhandle is 0x558f90107a20
 00000000000i[PLUGIN] loaded plugin libbx_harddrv.so
-00000000000i[      ] lt_dlhandle is 0x55d7fbb1bc40
+00000000000i[      ] lt_dlhandle is 0x558f90109c40
 00000000000i[PLUGIN] loaded plugin libbx_pci_ide.so
 00000000000i[PLUGIN] init_dev of 'pci' plugin device by virtual method
 00000000000i[DEV   ] i440FX PMC present at device 0, function 0
@@ -60,7 +60,7 @@
 00000000000i[DEV   ] PIIX3 PCI-to-ISA bridge present at device 1, function 0
 00000000000i[PLUGIN] init_dev of 'cmos' plugin device by virtual method
 00000000000i[CMOS  ] Using local time for initial clock
-00000000000i[CMOS  ] Setting initial clock to: Tue Jun  4 11:25:06 2019 (time0=1559618706)
+00000000000i[CMOS  ] Setting initial clock to: Tue Jun  4 14:21:04 2019 (time0=1559629264)
 00000000000i[PLUGIN] init_dev of 'dma' plugin device by virtual method
 00000000000i[DMA   ] channel 4 used by cascade
 00000000000i[PLUGIN] init_dev of 'pic' plugin device by virtual method
@@ -435,85 +435,84 @@
 00001470355i[BIOS  ] ACPI tables: RSDP addr=0x000fa700 ACPI DATA addr=0x00ff0000 size=0x1f62
 00001470395i[PCI   ] i440FX PMC write to PAM register 59 (TLB Flush)
 00001471135i[BIOS  ] bios_table_cur_addr: 0x000fa724
-00001517100i[XGUI  ] charmap update. Font is 9 x 16
+00001523810i[XGUI  ] charmap update. Font is 9 x 16
 00001598755i[VBIOS ] VGABios $Id: vgabios.c,v 1.75 2011/10/15 14:07:21 vruppert Exp $
 00001598825i[BXVGA ] VBE known Display Interface b0c0
 00001598855i[BXVGA ] VBE known Display Interface b0c5
 00001601780i[VBIOS ] VBE Bios $Id: vbe.c,v 1.64 2011/07/19 18:25:05 vruppert Exp $
-00003257160i[XGUI  ] charmap update. Font is 9 x 16
+00003281910i[XGUI  ] charmap update. Font is 9 x 16
 00032315160i[BIOS  ] Booting from 0000:7c00
-00032374000i[FLOPPY] partial read() on floppy image returns 56/512
-00035175150i[XGUI  ] charmap update. Font is 9 x 16
-00036429850i[      ] Ctrl-C detected in signal handler.
-00036429855i[      ] dbg: Quit
-00036429855i[CPU0  ] CPU is in protected mode (active)
-00036429855i[CPU0  ] CS.mode = 32 bit
-00036429855i[CPU0  ] SS.mode = 16 bit
-00036429855i[CPU0  ] EFER   = 0x00000000
-00036429855i[CPU0  ] | EAX=60000010  EBX=00000073  ECX=00090000  EDX=00000000
-00036429855i[CPU0  ] | ESP=0000ffd6  EBP=00000000  ESI=000e0200  EDI=00000200
-00036429855i[CPU0  ] | IOPL=0 id vip vif ac vm rf nt of df if tf sf zf af PF cf
-00036429855i[CPU0  ] | SEG sltr(index|ti|rpl)     base    limit G D
-00036429855i[CPU0  ] |  CS:0008( 0001| 0|  0) 00000000 007fffff 1 1
-00036429855i[CPU0  ] |  DS:0000( 0005| 0|  0) 00000000 0000ffff 0 0
-00036429855i[CPU0  ] |  SS:0000( 0005| 0|  0) 00000000 0000ffff 0 0
-00036429855i[CPU0  ] |  ES:0000( 0005| 0|  0) 00000000 0000ffff 0 0
-00036429855i[CPU0  ] |  FS:0000( 0005| 0|  0) 00000000 0000ffff 0 0
-00036429855i[CPU0  ] |  GS:0010( 0002| 0|  0) 000b8000 0000ffff 0 0
-00036429855i[CPU0  ] | EIP=0000000f (0000000f)
-00036429855i[CPU0  ] | CR0=0x60000011 CR2=0x00000000
-00036429855i[CPU0  ] | CR3=0x00000000 CR4=0x00000000
-00036429855i[CPU1  ] CPU is in real mode (halted)
-00036429855i[CPU1  ] CS.mode = 16 bit
-00036429855i[CPU1  ] SS.mode = 16 bit
-00036429855i[CPU1  ] EFER   = 0x00000000
-00036429855i[CPU1  ] | EAX=00000c06  EBX=000005b8  ECX=00000000  EDX=00000000
-00036429855i[CPU1  ] | ESP=00000000  EBP=00000000  ESI=00000000  EDI=00000000
-00036429855i[CPU1  ] | IOPL=0 id vip vif ac vm rf nt of df if tf sf zf af pf cf
-00036429855i[CPU1  ] | SEG sltr(index|ti|rpl)     base    limit G D
-00036429855i[CPU1  ] |  CS:9f00( 1e00| 0|  0) 0009f000 0000ffff 0 0
-00036429855i[CPU1  ] |  DS:0000( 0000| 0|  0) 00000000 0000ffff 0 0
-00036429855i[CPU1  ] |  SS:0000( 0000| 0|  0) 00000000 0000ffff 0 0
-00036429855i[CPU1  ] |  ES:0000( 0000| 0|  0) 00000000 0000ffff 0 0
-00036429855i[CPU1  ] |  FS:0000( 0000| 0|  0) 00000000 0000ffff 0 0
-00036429855i[CPU1  ] |  GS:0000( 0000| 0|  0) 00000000 0000ffff 0 0
-00036429855i[CPU1  ] | EIP=0000002c (0000002c)
-00036429855i[CPU1  ] | CR0=0x60000010 CR2=0x00000000
-00036429855i[CPU1  ] | CR3=0x00000000 CR4=0x00000000
-00036429855i[CPU2  ] CPU is in real mode (halted)
-00036429855i[CPU2  ] CS.mode = 16 bit
-00036429855i[CPU2  ] SS.mode = 16 bit
-00036429855i[CPU2  ] EFER   = 0x00000000
-00036429855i[CPU2  ] | EAX=00000c06  EBX=000005b8  ECX=00000000  EDX=00000000
-00036429855i[CPU2  ] | ESP=00000000  EBP=00000000  ESI=00000000  EDI=00000000
-00036429855i[CPU2  ] | IOPL=0 id vip vif ac vm rf nt of df if tf sf zf af PF cf
-00036429855i[CPU2  ] | SEG sltr(index|ti|rpl)     base    limit G D
-00036429855i[CPU2  ] |  CS:9f00( 1e00| 0|  0) 0009f000 0000ffff 0 0
-00036429855i[CPU2  ] |  DS:0000( 0000| 0|  0) 00000000 0000ffff 0 0
-00036429855i[CPU2  ] |  SS:0000( 0000| 0|  0) 00000000 0000ffff 0 0
-00036429855i[CPU2  ] |  ES:0000( 0000| 0|  0) 00000000 0000ffff 0 0
-00036429855i[CPU2  ] |  FS:0000( 0000| 0|  0) 00000000 0000ffff 0 0
-00036429855i[CPU2  ] |  GS:0000( 0000| 0|  0) 00000000 0000ffff 0 0
-00036429855i[CPU2  ] | EIP=0000002c (0000002c)
-00036429855i[CPU2  ] | CR0=0x60000010 CR2=0x00000000
-00036429855i[CPU2  ] | CR3=0x00000000 CR4=0x00000000
-00036429855i[CPU3  ] CPU is in real mode (halted)
-00036429855i[CPU3  ] CS.mode = 16 bit
-00036429855i[CPU3  ] SS.mode = 16 bit
-00036429855i[CPU3  ] EFER   = 0x00000000
-00036429855i[CPU3  ] | EAX=00000c06  EBX=000005b8  ECX=00000000  EDX=00000000
-00036429855i[CPU3  ] | ESP=00000000  EBP=00000000  ESI=00000000  EDI=00000000
-00036429855i[CPU3  ] | IOPL=0 id vip vif ac vm rf nt of df if tf sf zf af pf cf
-00036429855i[CPU3  ] | SEG sltr(index|ti|rpl)     base    limit G D
-00036429855i[CPU3  ] |  CS:9f00( 1e00| 0|  0) 0009f000 0000ffff 0 0
-00036429855i[CPU3  ] |  DS:0000( 0000| 0|  0) 00000000 0000ffff 0 0
-00036429855i[CPU3  ] |  SS:0000( 0000| 0|  0) 00000000 0000ffff 0 0
-00036429855i[CPU3  ] |  ES:0000( 0000| 0|  0) 00000000 0000ffff 0 0
-00036429855i[CPU3  ] |  FS:0000( 0000| 0|  0) 00000000 0000ffff 0 0
-00036429855i[CPU3  ] |  GS:0000( 0000| 0|  0) 00000000 0000ffff 0 0
-00036429855i[CPU3  ] | EIP=0000002c (0000002c)
-00036429855i[CPU3  ] | CR0=0x60000010 CR2=0x00000000
-00036429855i[CPU3  ] | CR3=0x00000000 CR4=0x00000000
-00036429855i[CMOS  ] Last time is 1559618709 (Tue Jun  4 11:25:09 2019)
-00036429855i[XGUI  ] Exit
-00036429855i[SIM   ] quit_sim called with exit code 0
+00032315260i[CPU0  ] WARNING: HLT instruction with IF=0!
+00365118779i[      ] Ctrl-C detected in signal handler.
+00365118780i[      ] dbg: Quit
+00365118780i[CPU0  ] CPU is in protected mode (halted)
+00365118780i[CPU0  ] CS.mode = 32 bit
+00365118780i[CPU0  ] SS.mode = 16 bit
+00365118780i[CPU0  ] EFER   = 0x00000000
+00365118780i[CPU0  ] | EAX=60000011  EBX=00000000  ECX=00090010  EDX=00000092
+00365118780i[CPU0  ] | ESP=00007c00  EBP=00000000  ESI=000e0000  EDI=0000ffac
+00365118780i[CPU0  ] | IOPL=0 id vip vif ac vm rf nt of df if tf sf zf af PF cf
+00365118780i[CPU0  ] | SEG sltr(index|ti|rpl)     base    limit G D
+00365118780i[CPU0  ] |  CS:0008( 0001| 0|  0) 00007c00 000001ff 0 1
+00365118780i[CPU0  ] |  DS:0010( 0002| 0|  0) 000b8000 0000ffff 0 1
+00365118780i[CPU0  ] |  SS:0000( 0005| 0|  0) 00000000 0000ffff 0 0
+00365118780i[CPU0  ] |  ES:0000( 0005| 0|  0) 00000000 0000ffff 0 0
+00365118780i[CPU0  ] |  FS:0000( 0005| 0|  0) 00000000 0000ffff 0 0
+00365118780i[CPU0  ] |  GS:0000( 0005| 0|  0) 00000000 0000ffff 0 0
+00365118780i[CPU0  ] | EIP=000000f5 (000000f5)
+00365118780i[CPU0  ] | CR0=0x60000011 CR2=0x00000000
+00365118780i[CPU0  ] | CR3=0x00000000 CR4=0x00000000
+00365118780i[CPU1  ] CPU is in real mode (halted)
+00365118780i[CPU1  ] CS.mode = 16 bit
+00365118780i[CPU1  ] SS.mode = 16 bit
+00365118780i[CPU1  ] EFER   = 0x00000000
+00365118780i[CPU1  ] | EAX=00000c06  EBX=000005b8  ECX=00000000  EDX=00000000
+00365118780i[CPU1  ] | ESP=00000000  EBP=00000000  ESI=00000000  EDI=00000000
+00365118780i[CPU1  ] | IOPL=0 id vip vif ac vm rf nt of df if tf sf zf af pf cf
+00365118780i[CPU1  ] | SEG sltr(index|ti|rpl)     base    limit G D
+00365118780i[CPU1  ] |  CS:9f00( 1e00| 0|  0) 0009f000 0000ffff 0 0
+00365118780i[CPU1  ] |  DS:0000( 0000| 0|  0) 00000000 0000ffff 0 0
+00365118780i[CPU1  ] |  SS:0000( 0000| 0|  0) 00000000 0000ffff 0 0
+00365118780i[CPU1  ] |  ES:0000( 0000| 0|  0) 00000000 0000ffff 0 0
+00365118780i[CPU1  ] |  FS:0000( 0000| 0|  0) 00000000 0000ffff 0 0
+00365118780i[CPU1  ] |  GS:0000( 0000| 0|  0) 00000000 0000ffff 0 0
+00365118780i[CPU1  ] | EIP=0000002c (0000002c)
+00365118780i[CPU1  ] | CR0=0x60000010 CR2=0x00000000
+00365118780i[CPU1  ] | CR3=0x00000000 CR4=0x00000000
+00365118780i[CPU2  ] CPU is in real mode (halted)
+00365118780i[CPU2  ] CS.mode = 16 bit
+00365118780i[CPU2  ] SS.mode = 16 bit
+00365118780i[CPU2  ] EFER   = 0x00000000
+00365118780i[CPU2  ] | EAX=00000c06  EBX=000005b8  ECX=00000000  EDX=00000000
+00365118780i[CPU2  ] | ESP=00000000  EBP=00000000  ESI=00000000  EDI=00000000
+00365118780i[CPU2  ] | IOPL=0 id vip vif ac vm rf nt of df if tf sf zf af PF cf
+00365118780i[CPU2  ] | SEG sltr(index|ti|rpl)     base    limit G D
+00365118780i[CPU2  ] |  CS:9f00( 1e00| 0|  0) 0009f000 0000ffff 0 0
+00365118780i[CPU2  ] |  DS:0000( 0000| 0|  0) 00000000 0000ffff 0 0
+00365118780i[CPU2  ] |  SS:0000( 0000| 0|  0) 00000000 0000ffff 0 0
+00365118780i[CPU2  ] |  ES:0000( 0000| 0|  0) 00000000 0000ffff 0 0
+00365118780i[CPU2  ] |  FS:0000( 0000| 0|  0) 00000000 0000ffff 0 0
+00365118780i[CPU2  ] |  GS:0000( 0000| 0|  0) 00000000 0000ffff 0 0
+00365118780i[CPU2  ] | EIP=0000002c (0000002c)
+00365118780i[CPU2  ] | CR0=0x60000010 CR2=0x00000000
+00365118780i[CPU2  ] | CR3=0x00000000 CR4=0x00000000
+00365118780i[CPU3  ] CPU is in real mode (halted)
+00365118780i[CPU3  ] CS.mode = 16 bit
+00365118780i[CPU3  ] SS.mode = 16 bit
+00365118780i[CPU3  ] EFER   = 0x00000000
+00365118780i[CPU3  ] | EAX=00000c06  EBX=000005b8  ECX=00000000  EDX=00000000
+00365118780i[CPU3  ] | ESP=00000000  EBP=00000000  ESI=00000000  EDI=00000000
+00365118780i[CPU3  ] | IOPL=0 id vip vif ac vm rf nt of df if tf sf zf af pf cf
+00365118780i[CPU3  ] | SEG sltr(index|ti|rpl)     base    limit G D
+00365118780i[CPU3  ] |  CS:9f00( 1e00| 0|  0) 0009f000 0000ffff 0 0
+00365118780i[CPU3  ] |  DS:0000( 0000| 0|  0) 00000000 0000ffff 0 0
+00365118780i[CPU3  ] |  SS:0000( 0000| 0|  0) 00000000 0000ffff 0 0
+00365118780i[CPU3  ] |  ES:0000( 0000| 0|  0) 00000000 0000ffff 0 0
+00365118780i[CPU3  ] |  FS:0000( 0000| 0|  0) 00000000 0000ffff 0 0
+00365118780i[CPU3  ] |  GS:0000( 0000| 0|  0) 00000000 0000ffff 0 0
+00365118780i[CPU3  ] | EIP=0000002c (0000002c)
+00365118780i[CPU3  ] | CR0=0x60000010 CR2=0x00000000
+00365118780i[CPU3  ] | CR3=0x00000000 CR4=0x00000000
+00365118780i[CMOS  ] Last time is 1559629300 (Tue Jun  4 14:21:40 2019)
+00365118780i[XGUI  ] Exit
+00365118780i[SIM   ] quit_sim called with exit code 0

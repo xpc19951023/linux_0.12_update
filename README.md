@@ -23,3 +23,13 @@ A20总线的检测在我的计算机上是可以运行的，但PIC已经被弃�
  Reference material is：
    https://my.oschina.net/findurl/blog/188123
    https://blog.csdn.net/weixin_33737774/article/details/86952055
+# 2019/6/4 16.18
+成功在我的电脑上实现linux0.00
+发现两个问题
+  1. cli使用后，int n 不能使用，在真实硬件上会重启；
+  2. 8259 PIC还是兼容的，我上面的判断是错误的。但是A20总线确实默认开启，我现在还这么认为。
+  
+Successfully implemented linux0.00 on my computer
+Found two problems
+   1. After cli is used, INT n cannot be used and will restart on real hardware.
+   2. The 8259 PIC is still compatible. My judgment above is wrong. But the A20 bus does open by default, and I still think so.

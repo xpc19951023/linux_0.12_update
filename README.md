@@ -33,3 +33,7 @@ Successfully implemented linux0.00 on my computer
 Found two problems
    1. After cli is used, INT n cannot be used and will restart on real hardware.
    2. The 8259 PIC is still compatible. My judgment above is wrong. But the A20 bus does open by default, and I still think so.
+# 2019/6.5 
+项目终结，太多不兼容代码，没有移植。
+
+虽然失败；积累了很多基础知识
